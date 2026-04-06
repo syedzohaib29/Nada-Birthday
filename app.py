@@ -118,17 +118,19 @@ audio {
 </style>
 """, unsafe_allow_html=True)
 
-# Floating hearts HTML
+# Floating animations HTML
 st.markdown("""
 <div class="hearts-container">
-    <div class="heart" style="left: 10%; animation-duration: 7s; animation-delay: 0s;">❤️</div>
-    <div class="heart" style="left: 20%; animation-duration: 9s; animation-delay: 2s; color: #ffb3c1;">🌸</div>
-    <div class="heart" style="left: 30%; animation-duration: 8s; animation-delay: 4s;">✨</div>
-    <div class="heart" style="left: 40%; animation-duration: 6s; animation-delay: 1s;">💖</div>
-    <div class="heart" style="left: 55%; animation-duration: 10s; animation-delay: 3s; font-size: 1.5rem;">🤍</div>
-    <div class="heart" style="left: 70%; animation-duration: 7s; animation-delay: 5s;">❤️</div>
-    <div class="heart" style="left: 80%; animation-duration: 8s; animation-delay: 2s; color: #ffb3c1;">🌸</div>
-    <div class="heart" style="left: 90%; animation-duration: 9s; animation-delay: 1s;">✨</div>
+    <div class="heart" style="left: 5%; animation-duration: 7s; animation-delay: 0s;">❤️</div>
+    <div class="heart" style="left: 15%; animation-duration: 9s; animation-delay: 2s;">🎉</div>
+    <div class="heart" style="left: 25%; animation-duration: 8s; animation-delay: 4s;">✨</div>
+    <div class="heart" style="left: 35%; animation-duration: 6s; animation-delay: 1s;">❄️</div>
+    <div class="heart" style="left: 45%; animation-duration: 10s; animation-delay: 3s; font-size: 1.5rem;">🤍</div>
+    <div class="heart" style="left: 55%; animation-duration: 7s; animation-delay: 5s;">🎉</div>
+    <div class="heart" style="left: 65%; animation-duration: 8s; animation-delay: 2s;">🌸</div>
+    <div class="heart" style="left: 75%; animation-duration: 9s; animation-delay: 1s;">✨</div>
+    <div class="heart" style="left: 85%; animation-duration: 7s; animation-delay: 5s;">❄️</div>
+    <div class="heart" style="left: 95%; animation-duration: 8s; animation-delay: 2s;">🎉</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -155,9 +157,9 @@ if audio_path.exists():
     st.markdown(f'''
     <div class="audio-container">
         <p style="font-family: 'Montserrat'; font-size: 0.9rem; color: #d81b60; margin-bottom: 5px;">
-            🎵 Tap play for a birthday piano melody 🎵
+            🎵 Enjoy the birthday piano melody 🎵
         </p>
-        <audio controls loop>
+        <audio controls autoplay loop>
             <source src="data:audio/mpeg;base64,{audio_base64}" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
