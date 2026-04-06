@@ -149,18 +149,22 @@ else:
     st.error("Image not found. Please ensure 'assets/couple_picture.jpeg' exists.")
 
 # Audio player
-audio_url = "https://upload.wikimedia.org/wikipedia/commons/4/4b/Happy_Birthday_to_You_%28Piano%29.ogg"
-st.markdown(f'''
-<div class="audio-container">
-    <p style="font-family: 'Montserrat'; font-size: 0.9rem; color: #d81b60; margin-bottom: 5px;">
-        🎵 Tap play for a birthday piano melody 🎵
-    </p>
-    <audio controls loop>
-        <source src="{audio_url}" type="audio/ogg">
-        Your browser does not support the audio element.
-    </audio>
-</div>
-''', unsafe_allow_html=True)
+audio_path = Path("assets/birthday_audio.mp3")
+if audio_path.exists():
+    audio_base64 = get_base64_of_bin_file(audio_path)
+    st.markdown(f'''
+    <div class="audio-container">
+        <p style="font-family: 'Montserrat'; font-size: 0.9rem; color: #d81b60; margin-bottom: 5px;">
+            🎵 Tap play for a birthday piano melody 🎵
+        </p>
+        <audio controls loop>
+            <source src="data:audio/mpeg;base64,{audio_base64}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    ''', unsafe_allow_html=True)
+else:
+    st.error("Audio not found. Please ensure 'assets/birthday_audio.mp3' exists.")
 
 # The letter
 letter_content = """
